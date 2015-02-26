@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>Florent_courtiade_resume</servlet-name>
+		<servlet-class>com.fcourtiade.resume.Florent_courtiade_resumeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Florent_courtiade_cv</servlet-name>
+		<servlet-class>com.fcourtiade.resume.Florent_courtiade_cvServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Florent_courtiade_admin</servlet-name>
+		<servlet-class>com.fcourtiade.resume.Florent_courtiade_adminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Florent_courtiade_resume</servlet-name>
+		<url-pattern>/florent_courtiade_resume</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Florent_courtiade_cv</servlet-name>
+		<url-pattern>/florent_courtiade_cv</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Florent_courtiade_admin</servlet-name>
+		<url-pattern>/florent_courtiade_admin</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>Florent_courtiade_resume</welcome-file>
+	</welcome-file-list>
+	
+	<security-constraint>
+	    <web-resource-collection>
+	    	<web-resource-name>florent_courtiade_admin</web-resource-name>
+	     	<url-pattern>/florent_courtiade_admin</url-pattern>
+	    </web-resource-collection>
+	    <auth-constraint>
+	        <role-name>admin</role-name>
+	    </auth-constraint>
+	</security-constraint>
+</web-app>
